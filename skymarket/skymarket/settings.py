@@ -160,8 +160,8 @@ REST_FRAMEWORK = {
 # SWAGGER
 SPECTACULAR_SETTINGS = {
     'TITLE': 'SkyMarket API',
-    'DESCRIPTION': 'Your project description',
-    'VERSION': '0.1.0',
+    'DESCRIPTION': 'Курсовая работа Django',
+    'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
 }
 
@@ -182,3 +182,11 @@ DJOSER = {
 SIMPLE_JWT = {
    'AUTH_HEADER_TYPES': ('Bearer', ),
 }
+
+# EMAIL
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_USE_TLS = True
+EMAIL_HOST = os.getenv("EMAIL_HOST", "smtp.gmail.com")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+EMAIL_PORT = os.getenv("EMAIL_PORT")

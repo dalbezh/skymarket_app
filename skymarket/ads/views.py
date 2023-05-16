@@ -66,11 +66,6 @@ class CommentViewSet(viewsets.ModelViewSet):
         user = self.request.user
         serializer.save(author=user, ad=ad_instance)
 
-    def get_queryset(self):
-        ad_id = self.kwargs.get("ad_pk")
-        ad_instance = get_object_or_404(Ad, id=ad_id)
-        return ad_instance.comments.all()
-
     def get_permissions(self):
         permission_classes = (IsAuthenticated,)
         if self.action in ["list", "retrieve"]:
@@ -78,3 +73,8 @@ class CommentViewSet(viewsets.ModelViewSet):
         elif self.action in ["create", "update", "partial_update", "destroy"]:
             permission_classes = (IsOwner | IsAdmin,)
         return tuple(permission() for permission in permission_classes)
+
+    def get_queryset(self):
+        ad_id = self.kwargs.get("ad_pk")
+        ad_instance = get_object_or_404(Ad, id=ad_id)
+        return ad_instance.comments.all()
