@@ -130,4 +130,6 @@ dmypy.json
 .DS_Store
 .idea/
 ./django_static
+
+# Файл с переменныеми окружения
 .env
