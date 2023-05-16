@@ -34,9 +34,9 @@ ___
 
 Была выбрана библиотека [drf_spectacular](https://drf-spectacular.readthedocs.io/en/latest/readme.html#).
 Доступ по следующим роутам:
-```html
+```
 /docs
-/schema
+/docs/schema
 ```
 
 ___
