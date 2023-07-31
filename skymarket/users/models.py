@@ -1,14 +1,7 @@
-from django.contrib.auth.models import AbstractBaseUser, AbstractUser, PermissionsMixin
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
-from django.db.models import TextChoices
 from users.managers import UserManager
 from phonenumber_field.modelfields import PhoneNumberField
-from django.utils.translation import gettext_lazy as _
-
-
-# class UserRoles(TextChoices):
-#    # TODO закончите enum-класс для пользователя
-#    pass
 
 
 class User(AbstractBaseUser, PermissionsMixin):

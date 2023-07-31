@@ -133,3 +133,6 @@ dmypy.json
 
 # Файл с переменныеми окружения
 .env
+
+# Ruff cache
+.ruff_cache
